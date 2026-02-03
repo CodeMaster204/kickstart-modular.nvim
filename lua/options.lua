@@ -71,4 +71,13 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Tab settings
+vim.opt.tabstop = 4                 -- number of visual spaces per TAB
+vim.opt.softtabstop = 4             -- number of spaces in tab when editing
+vim.opt.shiftwidth = 4              -- insert 4 spaces on a tab
+vim.opt.expandtab = true            -- tabs are spaces, mainly because of Python
+
+-- Hiding which mode we are in
+-- vim.opt.showmode = false
+
 -- vim: ts=2 sts=2 sw=2 et
