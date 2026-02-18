@@ -21,10 +21,10 @@ local function latex_letter(trig, expansion)
     )
 end
 
-local function cal_letter(letter)
+local function bb_letter(letter)
     return s(
-        { trig = ";u" .. letter, snippetType = "autosnippet", desc = "mathcal: " .. letter, wordTrig = false },
-        { t("\\mathcal{" .. string.upper(letter) .. "}") },
+        { trig = ";u" .. letter, snippetType = "autosnippet", desc = "mathbb: " .. letter, wordTrig = false },
+        { t("\\mathbb{" .. string.upper(letter) .. "}") },
         {condition = math}
     )
 end
@@ -78,13 +78,13 @@ return {
     latex_letter("vf", "varphi"),
     latex_letter("vw", "vartheta"),
 
-    -- Calligraphic letters
-    cal_letter("a"), cal_letter("b"), cal_letter("c"), cal_letter("d"),
-    cal_letter("e"), cal_letter("f"), cal_letter("g"), cal_letter("h"),
-    cal_letter("i"), cal_letter("j"), cal_letter("k"), cal_letter("l"),
-    cal_letter("m"), cal_letter("n"), cal_letter("o"), cal_letter("p"),
-    cal_letter("q"), cal_letter("r"), cal_letter("s"), cal_letter("t"),
-    cal_letter("u"), cal_letter("v"), cal_letter("w"), cal_letter("x"),
-    cal_letter("y"), cal_letter("z"),
+    -- Blacboard letters
+    bb_letter("a"), bb_letter("b"), bb_letter("c"), bb_letter("d"),
+    bb_letter("e"), bb_letter("f"), bb_letter("g"), bb_letter("h"),
+    bb_letter("i"), bb_letter("j"), bb_letter("k"), bb_letter("l"),
+    bb_letter("m"), bb_letter("n"), bb_letter("o"), bb_letter("p"),
+    bb_letter("q"), bb_letter("r"), bb_letter("s"), bb_letter("t"),
+    bb_letter("u"), bb_letter("v"), bb_letter("w"), bb_letter("x"),
+    bb_letter("y"), bb_letter("z"),
 }
 

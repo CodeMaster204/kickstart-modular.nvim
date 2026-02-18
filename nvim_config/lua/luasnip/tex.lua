@@ -3,6 +3,8 @@ local modules = {
     require("luasnip.tex.environments"), -- Environment starters/delimiters
     require("luasnip.tex.math_expressions"), -- Math expressions
     require("luasnip.tex.postfix"), -- Environment starters/delimiters
+    require("luasnip.tex.analysis"), -- Typical analysis symbols
+    -- require("luasnip.tex.functionnames"), -- Very used function names like cos/sin
 }
 
 local all_snippets = {}

@@ -13,9 +13,9 @@ return {
         })
         vim.keymap.set({"i"}, "<C-y>", function() ls.expand() end, {silent = true, desc = "expand autocomplete"})
         vim.keymap.set({"i", "s"}, "lk", function() ls.jump( 1) end, {silent = true, desc = "next autocomplete"})
-        vim.keymap.set({"i", "s"}, "k", function() ls.jump( 1) end, {silent = true, desc = "next autocomplete"})
+        vim.keymap.set({"i", "s"}, "kl", function() ls.jump( 1) end, {silent = true, desc = "next autocomplete"})
         vim.keymap.set({"i", "s"}, "<S-Tab>", function() ls.jump(-1) end, {silent = true, desc = "previous autocomplete"})
-        vim.keymap.set({"i", "s"}, "<C-E>", function()
+        vim.keymap.set({"i", "s"}, "<C-e>", function()
             if ls.choice_active() then
                 ls.change_choice(1)
             end

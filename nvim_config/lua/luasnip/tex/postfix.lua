@@ -10,6 +10,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local postfix = require("luasnip.extras.postfix").postfix
 local l = require("luasnip.extras").lambda
+
 -- use vimtex to determine if we are in a math context
 local function math()
     return vim.api.nvim_eval('vimtex#syntax#in_mathzone()') == 1

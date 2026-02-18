@@ -46,6 +46,7 @@ return {
             i(4,"figureLabel"),}
         )
     ),
+
     s({trig="neww", snippetType="autosnippet", dscr="Begin and end an arbitrary environment"},
         fmta(
             [[
@@ -57,7 +58,8 @@ return {
         ),
         {condition= line_begin}
     ),
-    s({trig="qq", snippetType="autosnippet", dscr="Start an equation environment"},
+
+    s({trig="ee", snippetType="autosnippet", dscr="Start an equation environment"},
         fmta(
             [[
             \begin{equation}
@@ -68,7 +70,32 @@ return {
         ),
         {condition = notmath and line_begin}
     ),
-    s({trig="sqq", snippetType="autosnippet", dscr="Start an equation environment"},
+
+    s({trig="aa", snippetType="autosnippet", dscr="Start an align environment"},
+        fmta(
+            [[
+            \begin{align}
+                <>
+            \end{align}
+            ]],
+            {i(1)}
+        ),
+        {condition = notmath and line_begin}
+    ),
+
+    s({trig="saa", snippetType="autosnippet", dscr="Start an align* environment"},
+        fmta(
+            [[
+            \begin{align*}
+                <>
+            \end{align*}
+            ]],
+            {i(1)}
+        ),
+        {condition = notmath and line_begin}
+    ),
+
+    s({trig="nn", snippetType="autosnippet", dscr="Start an equation environment"},
         fmta(
             [[
             \begin{equation*}
@@ -79,17 +106,7 @@ return {
         ),
         {condition = notmath and line_begin}
     ),
-    s({trig="nn", snippetType="autosnippet", dscr="Start full math mode"},
-        fmta(
-            [[
-            \[
-                <>
-            \]
-            ]],
-            {i(1)}
-        ),
-        {condition = notmath}
-    ),
+    
     s({trig="mm", snippetType="autosnippet", dscr="Start inline math mode"},
         fmta(
             [[
@@ -106,14 +123,14 @@ return {
 
 
     -- Font styles other than mathcal in letters.lua
-    s({trig="tii", snippetType="autosnippet", dscr="Italic text"},
+    s({trig="iit", snippetType="autosnippet", dscr="Italic text"},
         fmta(
             [[\textit{<>}]],
             {i(1)}
         )
     ),
 
-    s({trig="bff", snippetType="autosnippet", dscr="Bold face text"},
+    s({trig="bbf", snippetType="autosnippet", dscr="Bold face text"},
         fmta(
             [[\textbf{<>}]],
             {i(1)}
@@ -129,7 +146,21 @@ return {
         {condition = math}
     ),
 
+    -- s({trig="mbb", snippetType="autosnippet", dscr="Boldface font but shouldn't need to be used"},
+    --     fmta(
+    --         [[\mathbb{<>}]],
+    --         {i(1)}
+    --     ),
+    --     {condition = math}
+    -- ),
 
+    s({trig="cal", snippetType="autosnippet", dscr="Calligraphic font"},
+        fmta(
+            [[\mathcal{<>}]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
 
 }
 
