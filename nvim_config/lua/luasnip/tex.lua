@@ -5,6 +5,8 @@ local modules = {
     require("luasnip.tex.postfix"), -- Environment starters/delimiters
     require("luasnip.tex.analysis"), -- Typical analysis symbols
     require("luasnip.tex.linalg"), -- Linear algebra snippets
+    require("luasnip.tex.templates"), -- Linear algebra snippets
+    require("luasnip.tex.probas"), -- Linear algebra snippets
 }
 
 local all_snippets = {}

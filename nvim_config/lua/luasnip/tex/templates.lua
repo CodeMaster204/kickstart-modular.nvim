@@ -25,6 +25,7 @@ end
 
 local commands = [[
 \newcommand{\diff}{\ensuremath{\operatorname{d}\!}}
+\newcommand{\prob}{\ensuremath{\operatorname{Pr}\!}}
 ]]
 local packages = [[
 \usepackage{amsmath, amssymb, amsthm}

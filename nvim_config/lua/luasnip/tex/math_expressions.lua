@@ -63,7 +63,7 @@ local snippets = {
         {condition = math}
     ),
 
-    -- ==================================Typical expressions
+    -- ==================================Typical expressions which benefit from i nodes
     s({trig="ff", snippetType="autosnippet", dscr="Expand into \\frac{}{}"},
         fmta(
             [[\frac{<>}{<>}]],
@@ -83,6 +83,22 @@ local snippets = {
     s({trig="prod", snippetType="autosnippet", dscr="Big product notation"},
         fmta(
             [[\prod_{<>}]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="ccup", snippetType="autosnippet", dscr="Big union notation"},
+        fmta(
+            [[\bigcup_{<>}]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="ccap", snippetType="autosnippet", dscr="Big intersection notation"},
+        fmta(
+            [[\bigcap_{<>}]],
             {i(1)}
         ),
         {condition = math}
@@ -150,6 +166,14 @@ local snippets = {
         {condition = math}
     ),
 
+    s({trig="lrs", snippetType="autosnippet", dscr="left right curly brackets pair"},
+        fmta(
+            [[\left\{ <> \right\} ]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
     s({trig="lro", snippetType="autosnippet", dscr="left right other pair"},
         fmta(
             [[\left<> <> \right<> ]],
@@ -176,7 +200,7 @@ local snippets = {
 
     s({trig="set", snippetType="autosnippet", dscr="Creates a pair of curly brackets with left right modifiers"},
         fmta(
-            [[\left\{ <> \right\} ]],
+            [[\{ <> \} ]],
             {i(1)}
         ),
         {condition = math}
@@ -206,16 +230,6 @@ local snippets = {
         {condition = math}
     ),
 
-    ------------------------------COMPLEMENTS TO LR PAIRS
-    
-    s({trig="given", snippetType="autosnippet", dscr="Creates a bar for 'given'"},
-        fmta(
-            [[\;\middle|\; ]],
-            {i(1)}
-        ),
-        {condition = math}
-    ),
-
 }
 
 
@@ -240,13 +254,19 @@ local other_abbrevs= {
     vdd = "\\vdots",
     ddd = "\\ddots", -- ... lives in the above block
 
-    too = "\\to ",
+    to = "\\to ",
     mto = "\\mapsto ",
     impl = "\\Rightarrow ",
     iff = "\\iff ",
 
     inn = "\\in ",
     nin = "\\notin ",
+    cup = "\\cup ", -- The capital versions exist in the above block, with sum and prod
+    cap = "\\cap ",
+    subb = "\\subset ",
+    subeq = "\\subseteq ",
+
+    trianglel = "\\triangleleft ",
 
     langle = "\\langle ",
     rangle = "\\rangle ",
@@ -254,6 +274,14 @@ local other_abbrevs= {
     neq = "\\neq ",
     leq = "\\leq ",
     geq = "\\geq ",
+
+    land = "\\land ",
+    lor = "\\lor ",
+    lnot = "\\lnot ",
+
+    quad = "\\quad",
+    qquad = "\\qquad",
+
 }
 for trig, expansion in pairs(other_abbrevs) do
 

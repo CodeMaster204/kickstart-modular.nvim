@@ -23,7 +23,7 @@ end
 
 local function bb_letter(letter)
     return s(
-        { trig = ";u" .. letter, snippetType = "autosnippet", desc = "mathbb: " .. letter, wordTrig = false },
+        { trig = ";j" .. letter, snippetType = "autosnippet", desc = "mathbb: " .. letter, wordTrig = false },
         { t("\\mathbb{" .. string.upper(letter) .. "}") },
         {condition = math}
     )
@@ -57,17 +57,17 @@ return {
     latex_letter("z","zeta"),
 
     -- Capital Greek letters
-    latex_letter("jd","Delta"),
-    latex_letter("jf","Phi"),
-    latex_letter("jg","Gamma"),
-    latex_letter("jl","Lambda"),
-    latex_letter("jo","Omega"),
-    latex_letter("jp","Pi"),
-    latex_letter("jq","Psi"),
-    latex_letter("js","Sigma"),
-    latex_letter("jw","Theta"),
-    latex_letter("jx","Xi"),
-    latex_letter("jy","Upsilon"),
+    latex_letter("ud","Delta"),
+    latex_letter("uf","Phi"),
+    latex_letter("ug","Gamma"),
+    latex_letter("ul","Lambda"),
+    latex_letter("uo","Omega"),
+    latex_letter("up","Pi"),
+    latex_letter("uq","Psi"),
+    latex_letter("us","Sigma"),
+    latex_letter("uw","Theta"),
+    latex_letter("ux","Xi"),
+    latex_letter("uy","Upsilon"),
 
     -- Variant forms
     latex_letter("ve", "varepsilon"),
