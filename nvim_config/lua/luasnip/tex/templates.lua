@@ -27,7 +27,7 @@ local commands = [[
 \newcommand{\diff}{\ensuremath{\operatorname{d}\!}}
 ]]
 local packages = [[
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, amsthm}
 \usepackage{esint}
 ]]
 
@@ -97,12 +97,26 @@ return {
 
             -- Minimal template
             fmta([[
-    \documentclass{article}
-    \begin{document}
+\documentclass{article}
+<>
+<>
+\begin{document}
 
-    <>
+<>
 
-    \end{document}
+\end{document}
+                    ]],
+                {packages_node(), commands_node(), i(1)}
+            ),
+
+            -- Minimal minimal template w/o any command or package
+            fmta([[
+\documentclass{article}
+\begin{document}
+
+<>
+
+\end{document}
                     ]],
                 {i(1)}
             )

@@ -38,6 +38,30 @@ local snippets = {
         ),
         {condition = math}
     ),
+    
+    --------------------------------------...
+    
+    s({trig="...", snippetType="autosnippet", dscr="... -> \\cdots"}, t("\\cdots "), 
+        {condition = math}
+    ),
+
+    --------------------------------------ROOTS
+
+    s({trig="srt", snippetType="autosnippet", dscr="Expand into squareroot", wordTrig=false},
+        fmta(
+            [[\sqrt{<>}]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="nrt", snippetType="autosnippet", dscr="Expand into nth-root", wordTrig=false},
+        fmta(
+            [[\sqrt[<>]{<>}]],
+            {i(1, "3"), i(2)}
+        ),
+        {condition = math}
+    ),
 
     -- ==================================Typical expressions
     s({trig="ff", snippetType="autosnippet", dscr="Expand into \\frac{}{}"},
@@ -64,9 +88,13 @@ local snippets = {
         {condition = math}
     ),
 
+    ------------------------------------SECTIONING
+
     s({trig="sE", snippetType="autosnippet", dscr="section"},
         fmta(
-            [[\section{<>}]],
+            [[\section{<>}
+
+            ]],
             {i(1)}
         ),
         {condition = notmath and line_begin}
@@ -74,7 +102,9 @@ local snippets = {
 
     s({trig="ssE", snippetType="autosnippet", dscr="subsection"},
         fmta(
-            [[\subsection{<>}]],
+            [[\subsection{<>}
+
+            ]],
             {i(1)}
         ),
         {condition = notmath and line_begin}
@@ -82,7 +112,9 @@ local snippets = {
 
     s({trig="sssE", snippetType="autosnippet", dscr="subsubsection"},
         fmta(
-            [[\susbsubsection{<>}]],
+            [[\susbsubsection{<>}
+
+            ]],
             {i(1)}
         ),
         {condition = notmath and line_begin}
@@ -90,7 +122,9 @@ local snippets = {
 
     s({trig="sP", snippetType="autosnippet", dscr="paragraph"},
         fmta(
-            [[\paragraph{<>}]],
+            [[\paragraph{<>}
+
+            ]],
             {i(1)}
         ),
         {condition = notmath and line_begin}
@@ -98,10 +132,88 @@ local snippets = {
 
     s({trig="ssP", snippetType="autosnippet", dscr="subparagraph"},
         fmta(
-            [[\subparagraph{<>}]],
+            [[\subparagraph{<>}
+
+            ]],
             {i(1)}
         ),
         {condition = notmath and line_begin}
+    ),
+
+    ------------------------- LEFT RIGHT PAIRS (w/ or w/o left right mods)
+
+    s({trig="lrp", snippetType="autosnippet", dscr="left right parentheses pair"},
+        fmta(
+            [[\left( <> \right) ]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="lro", snippetType="autosnippet", dscr="left right other pair"},
+        fmta(
+            [[\left<> <> \right<> ]],
+            {i(1, "|"), i(2), i(3,"|")}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="lra", snippetType="autosnippet", dscr="left right angled brackets pair"},
+        fmta(
+            [[\left\langle <> \right\langle ]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+    
+    s({trig="eval", snippetType="autosnippet", dscr="Evaluation bar. Write before expression to be evaluated"},
+        fmta(
+            [[\left. <> \right|_{<>} ]],
+            {i(1), i(2)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="set", snippetType="autosnippet", dscr="Creates a pair of curly brackets with left right modifiers"},
+        fmta(
+            [[\left\{ <> \right\} ]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="abs", snippetType="autosnippet", dscr="Creates the left| and right | for absolute value."},
+        fmta(
+            [[\left| <> \right| ]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="ceil", snippetType="autosnippet", dscr="Creates a pair of left, right ceiling brackets"},
+        fmta(
+            [[\left\lceil <> \right\rceil ]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="floor", snippetType="autosnippet", dscr="Creates a pair of left, right ffloor brackets"},
+        fmta(
+            [[\left\lfloor <> \right\rfloor ]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
+    ------------------------------COMPLEMENTS TO LR PAIRS
+    
+    s({trig="given", snippetType="autosnippet", dscr="Creates a bar for 'given'"},
+        fmta(
+            [[\;\middle|\; ]],
+            {i(1)}
+        ),
+        {condition = math}
     ),
 
 }
@@ -118,14 +230,30 @@ local other_abbrevs= {
     hcos = "\\cosh",
     htan = "\\tanh",
 
-    iny = "\\infty",
+    iny = "\\infty ",
     del = "\\del",
-    dot = "\\cdot",
-    time = "\\times",
 
-    neq = "\\neq",
-    geq = "\\geq",
-    leq = "\\leq",
+    time = "\\times ",
+    dot = "\\cdot ",
+    circ = "\\circ ",
+
+    vdd = "\\vdots",
+    ddd = "\\ddots", -- ... lives in the above block
+
+    too = "\\to ",
+    mto = "\\mapsto ",
+    impl = "\\Rightarrow ",
+    iff = "\\iff ",
+
+    inn = "\\in ",
+    nin = "\\notin ",
+
+    langle = "\\langle ",
+    rangle = "\\rangle ",
+
+    neq = "\\neq ",
+    leq = "\\leq ",
+    geq = "\\geq ",
 }
 for trig, expansion in pairs(other_abbrevs) do
 

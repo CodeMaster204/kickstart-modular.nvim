@@ -53,6 +53,7 @@ return {
             \begin{<>}
                 <>
             \end{<>}
+            
             ]],
             {i(1),i(2),rep(1),}
         ),
@@ -65,6 +66,7 @@ return {
             \begin{equation}
                 <>
             \end{equation}
+
             ]],
             {i(1)}
         ),
@@ -77,6 +79,7 @@ return {
             \begin{align}
                 <>
             \end{align}
+
             ]],
             {i(1)}
         ),
@@ -89,6 +92,7 @@ return {
             \begin{align*}
                 <>
             \end{align*}
+
             ]],
             {i(1)}
         ),
@@ -98,9 +102,10 @@ return {
     s({trig="nn", snippetType="autosnippet", dscr="Start an equation environment"},
         fmta(
             [[
-            \begin{equation*}
+            \[
                 <>
-            \end{equation*}
+            \]
+
             ]],
             {i(1)}
         ),
@@ -109,14 +114,23 @@ return {
     
     s({trig="mm", snippetType="autosnippet", dscr="Start inline math mode"},
         fmta(
-            [[
-            \(
-                <>
-            \)
-            ]],
+            [[\(<>\) ]],
             {i(1)}
         ),
         {condition = notmath}
+    ),
+
+    s({trig="pff", snippetType="autosnippet", dscr="Start a proof environment with the box at the end"},
+        fmta(
+            [[
+            \begin{proof}
+                <>
+            \end{proof}
+
+            ]],
+            {i(1)}
+        ),
+        {condition = notmath and line_begin}
     ),
 
 
@@ -125,14 +139,14 @@ return {
     -- Font styles other than mathcal in letters.lua
     s({trig="iit", snippetType="autosnippet", dscr="Italic text"},
         fmta(
-            [[\textit{<>}]],
+            [[\textit{<>} ]],
             {i(1)}
         )
     ),
 
     s({trig="bbf", snippetType="autosnippet", dscr="Bold face text"},
         fmta(
-            [[\textbf{<>}]],
+            [[\textbf{<>} ]],
             {i(1)}
         )
     ),
@@ -140,7 +154,15 @@ return {
     
     s({trig="rm", snippetType="autosnippet", dscr="Roman face text"},
         fmta(
-            [[\textrm{<>}]],
+            [[\textrm{<>} ]],
+            {i(1)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="op", snippetType="autosnippet", dscr="Operator name"},
+        fmta(
+            [[\operatorname{<>} ]],
             {i(1)}
         ),
         {condition = math}
@@ -156,7 +178,7 @@ return {
 
     s({trig="cal", snippetType="autosnippet", dscr="Calligraphic font"},
         fmta(
-            [[\mathcal{<>}]],
+            [[\mathcal{<>} ]],
             {i(1)}
         ),
         {condition = math}
