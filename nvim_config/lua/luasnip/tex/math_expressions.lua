@@ -192,7 +192,7 @@ local snippets = {
     
     s({trig="eval", snippetType="autosnippet", dscr="Evaluation bar. Write before expression to be evaluated"},
         fmta(
-            [[\left. <> \right|_{<>} ]],
+            [[\left. <> \right|_{<>}]],
             {i(1), i(2)}
         ),
         {condition = math}
@@ -245,7 +245,8 @@ local other_abbrevs= {
     htan = "\\tanh",
 
     iny = "\\infty ",
-    del = "\\del",
+    del = "\\partial",
+    dee = "\\diff",
 
     time = "\\times ",
     dot = "\\cdot ",

@@ -151,7 +151,7 @@ return{
 
     s({trig="ddp", snippetType="autosnippet", dscr="Expand into a first order partial derivative"},
         fmta(
-            [[\frac{\del <>}{\del <>} ]],
+            [[\frac{\partial <>}{\partial <>} ]],
             {i(1,"f"), i(2, "x")}
         ),
         {condition = math}
@@ -159,7 +159,7 @@ return{
 
     s({trig="ddm", snippetType="autosnippet", dscr="Expand into an nth order partial derivate (w.r.t. only one variable)"},
         fmta(
-            [[\frac{\del^{<>} <>}{\del <>^{<>}} ]],
+            [[\frac{\partial^{<>} <>}{\partial <>^{<>}} ]],
             {i(1, "n"), i(2,"f"), i(3, "x"), rep(1)}
         ),
         {condition = math}
@@ -167,7 +167,7 @@ return{
     
     ---------------------------GRADIENT AND OTHER SYMBOLS LINKED TO IT
 
-    s({trig="grad", snippettype="autosnippet", dscr="expand into nabla - used for gradient"},
+    s({trig="grad", snippetType="autosnippet", dscr="expand into nabla - used for gradient"},
         t("\\nabla "),
         {condition = math}
     ),
