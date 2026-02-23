@@ -9,7 +9,7 @@ return {
         ls.setup({
             update_events = {"TextChanged", "TextChangedI"},
             enable_autosnippets = true,
-            store_selection_keys = "<Tab>",
+            -- store_selection_keys = "<Tab>",
         })
         vim.keymap.set({"i"}, "<C-y>", function() ls.expand() end, {silent = true, desc = "expand autocomplete"})
         vim.keymap.set({"i", "s"}, "lk", function() ls.jump( 1) end, {silent = true, desc = "next autocomplete"})

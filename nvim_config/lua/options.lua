@@ -82,8 +82,16 @@ vim.opt.expandtab = true            -- tabs are spaces, mainly because of Python
 
 
 
--- Making it so that concealment is enabled
+-- Making it so that concealment is enabled (say LaTeX)
 vim.opt.conceallevel = 2
 -- vim.opt.concealcursor = "nc" -- This makes it so that concealment is active even in normal mode
 
--- vim: ts=2 sts=2 sw=2 et
+
+-- This enables code folding
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99 -- open all folds by default
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+
+-- vim: ts=2 sts=2 sw=2 et -- Idk what this is but it's here so ehh
