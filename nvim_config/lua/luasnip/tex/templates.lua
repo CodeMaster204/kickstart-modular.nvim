@@ -43,6 +43,7 @@ local packages = [[
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{esint}
 \usepackage[margin=1in]{geometry}
+\usepackage{tikz}
 ]]
 
 local function commands_node()
