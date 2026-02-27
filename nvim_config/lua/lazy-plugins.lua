@@ -72,6 +72,7 @@ require('lazy').setup({
   require 'custom.plugins.vimtex',
   require 'custom.plugins.luasnip',
   require 'custom.plugins.completions',
+  -- require 'custom.plugins.markdown-preview',
 
 }, {
   ui = {

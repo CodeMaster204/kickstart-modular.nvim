@@ -24,7 +24,7 @@ end
 
 return{
 
-    s({trig="prob", snippetType="autosnippet", dscr="Expands into the custom prob function"}, t([[\\prob ]]), {condition=math}),
+    s({trig="prob", snippetType="autosnippet", dscr="Expands into the custom prob function"}, t([[\prob ]]), {condition=math}),
 
     s({trig="given", snippetType="autosnippet", dscr="Creates a bar for 'given' - in an lr environment /!\\"},
         t(
