@@ -36,7 +36,7 @@ return {
     s({trig="fig", snippetType="snippet", dscr="A basic figure environment"},
         fmta(
             [[
-            \begin{figure}
+            \begin{figure}[<>]
             \centering
             \includegraphics[width=0.9\linewidth]{<>}
             \caption{
@@ -47,10 +47,11 @@ return {
             \end{figure}
 
             ]],
-            { i(1,"filename"),
-            i(2, "captionBold"),
-            i(3, "captionText"),
-            i(4,"figureLabel"),}
+            { i(1,"h!"),
+            i(2,"filename"),
+            i(3, "captionBold"),
+            i(4, "captionText"),
+            i(5,"figureLabel"),}
         )
     ),
     

@@ -44,16 +44,24 @@ local snippets = {
         ),
         {condition = math}
     ),
-    
-    --------------------------------------...
-    
-    s({trig="...", snippetType="autosnippet", dscr="... -> \\dotsc"}, t("\\dotsc "), 
+
+    --------------------------------------...and other things that couldn't go into the big table underneath
+
+    s({trig="...", snippetType="autosnippet", dscr="... -> \\dotsc"}, t("\\dotsc "),
         {condition = math}
     ),
 
-    --------------------------------------ROOTS
+    s({trig=".,", snippetType="autosnippet", dscr="., -> \\,"}, t("\\, "),
+        {condition = math}
+    ),
 
-    s({trig="srt", snippetType="autosnippet", dscr="Expand into squareroot", wordTrig=false},
+    s({trig=".;", snippetType="autosnippet", dscr=".; -> \\;"}, t("\\; "),
+        {condition = math}
+    ),
+
+    --------------------------------------ROOTS AND LOGS
+
+    s({trig="srt", snippetType="autosnippet", dscr="Expand into squareroot", wordTrig=true},
         fmta(
             [[\sqrt{<>}]],
             {i(1)}
@@ -61,10 +69,18 @@ local snippets = {
         {condition = math}
     ),
 
-    s({trig="nrt", snippetType="autosnippet", dscr="Expand into nth-root", wordTrig=false},
+    s({trig="nrt", snippetType="autosnippet", dscr="Expand into nth-root", wordTrig=true},
         fmta(
             [[\sqrt[<>]{<>}]],
             {i(1, "3"), i(2)}
+        ),
+        {condition = math}
+    ),
+
+    s({trig="loga", snippetType="autosnippet", dscr="Expand into log base a", wordTrig=true},
+        fmta(
+            [[\log_{<>}]],
+            {i(1, "l")}
         ),
         {condition = math}
     ),
@@ -300,6 +316,9 @@ local other_abbrevs= {
     hcos = "\\cosh",
     htan = "\\tanh",
 
+    ln = "\\ln",
+    loge = "\\log", -- Log base a is above
+
     iny = "\\infty ",
     del = "\\partial",
     dee = "\\diff",
@@ -343,7 +362,7 @@ local other_abbrevs= {
     lor = "\\lor ",
     lnot = "\\lnot ",
 
-    qad = "\\quad",
+    qad = "\\quad", -- \; and \, are above 
     qqad = "\\qquad",
 
 }

@@ -32,7 +32,7 @@ return{
 
     -----------------------------LIMITS
 
-    s({trig="lim", snippetType="autosnippet", dscr="Expand into a limit of something"},
+    s({trig="limm", snippetType="autosnippet", dscr="Expand into a limit of something"},
         fmta(
             [[\lim_{<> \to <>} <>]],
             {i(1,"n"), i(2,"\\infty"), i(3,"u_{n}")}
@@ -133,7 +133,7 @@ return{
 
     ---------------------------DERIVATIVES
 
-    s({trig="dds", snippetType="autosnippet", dscr="Expand into a first order single variable derivative in Leibniz notation"},
+    s({trig="ddf", snippetType="autosnippet", dscr="Expand into a first order single variable derivative in Leibniz notation"},
         fmta(
             [[\frac{\diff <>}{\diff <>} ]],
             {i(1,"f"), i(2, "x")}

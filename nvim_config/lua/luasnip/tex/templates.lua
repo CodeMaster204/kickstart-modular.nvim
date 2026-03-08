@@ -41,9 +41,11 @@ local commands = [[
 
 local packages = [[
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage{esint}
 \usepackage[margin=1in]{geometry}
-\usepackage{tikz}
+% \usepackage{esint}
+% \usepackage{tikz}
+% \usepackage{verbatim}
+% \usepackage{hyperref}
 ]]
 
 local function commands_node()

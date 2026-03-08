@@ -57,17 +57,17 @@ return {
     latex_letter("z","zeta"),
 
     -- Capital Greek letters
-    latex_letter("ud","Delta"),
-    latex_letter("uf","Phi"),
-    latex_letter("ug","Gamma"),
-    latex_letter("ul","Lambda"),
-    latex_letter("uo","Omega"),
-    latex_letter("up","Pi"),
-    latex_letter("uq","Psi"),
-    latex_letter("us","Sigma"),
-    latex_letter("uw","Theta"),
-    latex_letter("ux","Xi"),
-    latex_letter("uy","Upsilon"),
+    latex_letter("D","Delta"),
+    latex_letter("F","Phi"),
+    latex_letter("G","Gamma"),
+    latex_letter("L","Lambda"),
+    latex_letter("O","Omega"),
+    latex_letter("P","Pi"),
+    latex_letter("Q","Psi"),
+    latex_letter("S","Sigma"),
+    latex_letter("W","Theta"),
+    latex_letter("X","Xi"),
+    latex_letter("Y","Upsilon"),
 
     -- Variant forms
     latex_letter("ve", "varepsilon"),
