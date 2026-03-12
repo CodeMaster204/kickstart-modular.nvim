@@ -85,7 +85,7 @@ return{
 
     s({trig="norm", snippetType="autosnippet", dscr="Double barred norm for vectors - with left/right"},
         fmta(
-            [[\left\lVert<>\right\rVert ]],
+            [[\left\lVert <>\right\rVert ]],
             {i(1)}
         ),
         {condition = math}

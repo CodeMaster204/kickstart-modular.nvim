@@ -80,12 +80,12 @@ local snippets = {
     s({trig="loga", snippetType="autosnippet", dscr="Expand into log base a", wordTrig=true},
         fmta(
             [[\log_{<>}]],
-            {i(1, "l")}
+            {i(1, "2")}
         ),
         {condition = math}
     ),
 
-    -- ==================================Typical expressions which benefit from i nodes
+    -- ==================================Other typical expressions which benefit from i nodes
     s({trig="ff", snippetType="autosnippet", dscr="Expand into \\frac{}{}"},
         fmta(
             [[\frac{<>}{<>}]],
@@ -208,26 +208,6 @@ local snippets = {
         {condition = compose_with_and(notmath, line_begin)}
     ),
 
-    s({trig="spP", snippetType="autosnippet", dscr="starred paragraph"},
-        fmta(
-            [[\paragraph*{<>}
-
-            ]],
-            {i(1)}
-        ),
-        {condition = compose_with_and(notmath, line_begin)}
-    ),
-
-    s({trig="sspP", snippetType="autosnippet", dscr="starred subparagraph"},
-        fmta(
-            [[\subparagraph*{<>}
-
-            ]],
-            {i(1)}
-        ),
-        {condition = compose_with_and(notmath, line_begin)}
-    ),
-
     ------------------------- LEFT RIGHT PAIRS (w/ or w/o left right mods)
 
     s({trig="lrp", snippetType="autosnippet", dscr="left right parentheses pair"},
@@ -336,10 +316,12 @@ local other_abbrevs= {
 
     to = "\\to ",
     mto = "\\mapsto ",
-    impl = "\\Rightarrow ",
+    impl = "\\implies ",
     iff = "\\iff ",
     fral = "\\forall ",
-    Exi = "\\exists ",
+    exi = "\\exists ",
+    st = "\\;\\mathrm{s.t.}\\; ",
+    qed = "\\qed ",
 
     inn = "\\in ",
     nin = "\\notin ",
@@ -364,7 +346,6 @@ local other_abbrevs= {
 
     qad = "\\quad", -- \; and \, are above 
     qqad = "\\qquad",
-
 }
 for trig, expansion in pairs(other_abbrevs) do
 

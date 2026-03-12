@@ -233,5 +233,20 @@ return {
         {condition = math}
     ),
 
+    s({trig="over", snippetType="autosnippet", dscr="Expand into overline", wordTrig=true},
+        fmta(
+            [[\overline{<>} ]],
+            {i(1, "z")}
+        ),
+        {condition = math}
+    ),
+    
+    s({trig="tag", snippetType="autosnippet", dscr="Expand into tag", wordTrig=true},
+        fmta(
+            [[\tag{<>} ]],
+            {i(1, "")}
+        ),
+        {condition = math}
+    ),
 }
 

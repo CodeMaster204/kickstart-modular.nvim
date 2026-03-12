@@ -77,8 +77,8 @@ return{
 
     s({trig="inte", snippetType="autosnippet", dscr="Expand into integral from -infinity to infinity"},
         fmta(
-            [[\int_{-\infty}^{\infty} <> \diff <>]],
-            {i(1, "f(x)"), i(2,"x")}
+            [[\int_{<>}^{<>} <> \diff <>]],
+            {i(1,"-\\infty"), i(2,"\\infty"), i(3, "f(x)"), i(4,"x")}
         ),
         {condition = math}
     ),
